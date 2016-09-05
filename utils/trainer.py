@@ -1,3 +1,5 @@
+"""Define a class for training a tensorflow model."""
+
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
 
@@ -9,7 +11,7 @@ from train_eval_base import TrainEvalBase
 FLAGS = tf.flags.FLAGS
 
 tf.flags.DEFINE_string("data_path", "../data_cifar10/data_batch_*",
-    "Path to a file of tf.Example protos containing training data.")
+    "Path to files of tf.Example protos containing training data.")
 
 tf.flags.DEFINE_string("logdir", "/tmp/cifar10", "Directory where to write event logs")
 
@@ -30,8 +32,19 @@ tf.flags.DEFINE_string("train_config", "learning_rate=0.1,"
                         """)
 
 class Trainer(TrainEvalBase):
-
   def __init__(self, model, loss_fn, graph, input_reader):
+    """Initialize a `Trainer` object.
+
+      Args:
+        model: an instance of a subclass of the `ModelBase` class (defined in
+          `model_base.py`).
+        loss_fn: a tensorflow op, a loss function for training a model. See:
+            https://www.tensorflow.org/code/tensorflow/contrib/losses/python/losses/loss_ops.py
+          for a list of available loss functions.
+        graph: a tensorflow computation graph.
+        input_reader: an instance of a subclass of the `InputReaderBase` class
+          (defined in `input_reader_base.py`).
+    """
     self._config = HParams(learning_rate=0.1,
                            batch_size=16,
                            train_steps=10000,
@@ -45,20 +58,27 @@ class Trainer(TrainEvalBase):
                                   FLAGS.logdir, graph, input_reader)
 
   def _compute_loss_and_other_metrics(self):
+    """Compute the objective loss function."""
     self._compute_loss()
     self._summary_ops.append(tf.scalar_summary('Loss_Train', self._loss))
 
   def run(self):
+    """Run training."""
+    # Create logging directory if not exists.
     if not os.path.isdir(self._train_log_dir):
       os.makedirs(self._train_log_dir)
 
+    # Load data and compute loss function
     self._initialize()
 
+    # Visualize input images in Tensorboard.
     self._summary_ops.append(tf.image_summary("Image_Train", self._observations, max_images=5))
 
+    # Initialize optimizer.
     optimizer = tf.train.AdagradOptimizer(self._config.learning_rate)
     train_op = slim.learning.create_train_op(self._loss, optimizer)
 
+    # Use `slim.learning.train` to manage training.
     slim.learning.train(train_op=train_op,
                         logdir=self._train_log_dir,
                         graph=self._graph,
