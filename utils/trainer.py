@@ -1,4 +1,7 @@
-"""Define a class for training a tensorflow model."""
+"""Define a class for training a tensorflow model.
+
+  This class inherits `TrainEvalBase` (defined in `train_eval_base.py`).
+"""
 
 import tensorflow as tf
 import tensorflow.contrib.slim as slim
@@ -58,7 +61,7 @@ class Trainer(TrainEvalBase):
                                   FLAGS.logdir, graph, input_reader)
 
   def _compute_loss_and_other_metrics(self):
-    """Compute the objective loss function."""
+    """Compute loss function."""
     self._compute_loss()
     self._summary_ops.append(tf.scalar_summary('Loss_Train', self._loss))
 
