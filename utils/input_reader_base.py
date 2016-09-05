@@ -24,4 +24,4 @@ class InputReaderBase(object):
         NotImplementedError: this method is required to be implemented by any
           subclass of `InputReaderBase`.
     """
-  raise NotImplementedError
+    raise NotImplementedError
