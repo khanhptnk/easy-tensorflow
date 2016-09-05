@@ -22,7 +22,16 @@ tf.flags.DEFINE_string("model_hparams",
                        "init_stddev=0.01",
                        """
                        Model hyperparameters:
-                         num_pool_conv_layers=
+                         nums_pool_conv_layers: number of max-pooling
+                           convolutional layers.
+                         conv_filter_sizes: sizes of filters of each
+                           convolutional layers.
+                         pooling_size: size of the pooling kernels.
+                         pooling_stride: pooling stride.
+                         dropout_prob: probability of keeping activations.
+                         regularize_constant: L2 regularizing constant.
+                         init_stddev: standard deviation of the Gaussian
+                           distribution used for initatializing weights.
                        """)
 
 class ModelCifar10(ModelBase):
