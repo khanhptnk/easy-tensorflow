@@ -1,7 +1,7 @@
 # easy-tensorflow
 
 **easy-tensorflow** provides an easy way to train and evaluate TensorFlow 
-models. The goal of this project is not build an off-the-shelf tool for 
+models. The goal of this project is not to build an off-the-shelf tool for 
 industrial or commercial purposes but to *simplify* programming with TensorFlow
 API. With a standardized pipeline, one does not have to worry about extra 
 book-keeping steps but can focus entirely on input pre-processing and model 
