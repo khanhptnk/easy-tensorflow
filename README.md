@@ -9,7 +9,7 @@ engineering.
 
 We make use of [TF-Slim](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/slim) to make the code concise and flexible.  
 
-##1. Code structure (for the Cifar-10 example)
+##1. Code structure (Cifar-10 example)
 
           TrainEvalBase                 ModelBase             InputReaderBase
              /     \                        |                       |
@@ -18,28 +18,28 @@ We make use of [TF-Slim](https://github.com/tensorflow/tensorflow/tree/master/te
        Trainer     Evaluator            ModelCifar10         InputReaderCifar10
 
 
-TrainEvalBase: base (abstract) class for training and evaluating. 
++ *TrainEvalBase*: base (abstract) class for training and evaluating. 
 
-Trainer: a subclass of `TrainEvalBase` used for training a model with provided 
++ *Trainer*: a subclass of `TrainEvalBase` used for training a model with provided 
 data and loss function, makes use of `slim.learning.train`. 
 
-Evaluator: a subclass of `TrainEvalBase` for evaluating a model, computes 
++ *Evaluator*: a subclass of `TrainEvalBase` for evaluating a model, computes 
 evaluating metrics on a trained model.
 
-ModelBase: base class for specifying a model architecture. Two methods are 
++ *ModelBase*: base class for specifying a model architecture. Two methods are 
 required to implemented by any subclass: `arg_scope`, configurations of the 
 model's layers, and `compute`, computing outputs of the model from a batch of 
 input examples.
 
-ModelCifar10: a subclass of `ModelBase`, implements `arg_scope` and `compute`.
++ *ModelCifar10*: a subclass of `ModelBase`, implements `arg_scope` and `compute`.
 
-InputReaderBase: base (abstract) class for reading input, requires the method
++ *InputReaderBase*: base (abstract) class for reading input, requires the method
 `read_input` to be implemented by any subclass. 
 
-InputReaderCifar10: a subclass of `InputReaderBase`, implements `read_input` and
++ *InputReaderCifar10*: a subclass of `InputReaderBase`, implements `read_input` and
 an input pre-processing method. 
 
-##2. Define a new model:
+##2. Define a new model (Cifar-10 example):
 
 To define a new model, we need to create 4 core files (see the `model_cifar10` 
 directory):
