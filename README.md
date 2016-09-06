@@ -9,7 +9,7 @@ engineering.
 
 We make use of [TF-Slim](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/slim) to make the code concise and flexible.  
 
-##0. Demo
+##0. Cifar-10 demo
 
 ~~~~
 $ cd cifar10
