@@ -45,7 +45,7 @@ $ tensorboard --logdir=/tmp/cifar10
 + **TrainEvalBase**: base (abstract) class for training and evaluating. 
 
 + **Trainer**: a subclass of `TrainEvalBase` used for training a model with provided 
-data and loss function, makes use of `slim.learning.train`. 
+data and loss function. 
 
 + **Evaluator**: a subclass of `TrainEvalBase` for evaluating a model, computes 
 evaluating metrics on a trained model.
