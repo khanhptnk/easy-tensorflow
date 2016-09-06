@@ -9,7 +9,7 @@ engineering.
 
 We make use of TF-Slim to make the code concise and flexible.  
 
-1. Code structure (for the Cifar-10 example)
+##1. Code structure (for the Cifar-10 example)
 
           TrainEvalBase                 ModelBase             InputReaderBase
              /     \                        |                       |
@@ -39,7 +39,7 @@ InputReaderBase: base (abstract) class for reading input, requires the method
 InputReaderCifar10: a subclass of `InputReaderBase`, implements `read_input` and
 an input pre-processing method. 
 
-2. Define a new model:
+##2. Define a new model:
 
 To define a new model, we need to create 4 core files (see the `model_cifar10` 
 directory):
@@ -63,8 +63,7 @@ reader object. Then invoke the `run` method to start evaluating. **NOTE**: an
 evaluating object is created by setting the `is_training` parameter of 
 `ModelBase` to False. 
 
-
-3. Common TensorFlow concepts:
+##3. Common TensorFlow concepts:
 
 *tf.Example proto*: a feature vector and can be considered as a Python dict. Each 
 element is a pair of (key, value). The key is the feature name. The value is 
