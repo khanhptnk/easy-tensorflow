@@ -3,8 +3,8 @@
 **easy-tensorflow** provides an easy way to train and evaluate TensorFlow 
 models. The goal of this project is not build an off-the-shelf tool for 
 industrial or commercial purposes but to *simplify* programming with TensorFlow
-API. With a standardized pipeline, one does not have to worry about book-keeping
-functionalities but can focus entirely on input pre-processing and model 
+API. With a standardized pipeline, one does not have to worry about extra 
+book-keeping steps but can focus entirely on input pre-processing and model 
 engineering. 
 
 We make use of [TF-Slim](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/slim) to make the code concise and flexible.  
