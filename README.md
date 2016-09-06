@@ -33,6 +33,9 @@ Monitor stats on TensorBoard:
 $ tensorboard --logdir=/tmp/cifar10
 ~~~~
 
+Then go to any browser (e.g. Chrome)'s address bar and type "0.0.0.0:6006" to 
+visualize TensorBoard. 
+
 ##1. Code structure (Cifar-10 example)
 
           TrainEvalBase                 ModelBase             InputReaderBase
