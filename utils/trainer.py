@@ -16,7 +16,7 @@ FLAGS = tf.flags.FLAGS
 tf.flags.DEFINE_string("data_path", "../data_cifar10/data_batch_*",
     "Path to files of tf.Example protos containing training data.")
 
-tf.flags.DEFINE_string("logdir", "/tmp/cifar10", "Directory where to write event logs")
+tf.flags.DEFINE_string("logdir", "/tmp/cifar10_run2", "Directory where to write event logs")
 
 tf.flags.DEFINE_string("train_config", "learning_rate=0.1,"
                                        "batch_size=256,"
@@ -78,7 +78,7 @@ class Trainer(TrainEvalBase):
     self._summary_ops.append(tf.image_summary("Image_Train", self._observations, max_images=5))
 
     # Initialize optimizer.
-    optimizer = tf.train.AdagradOptimizer(self._config.learning_rate)
+    optimizer = tf.train.AdadeltaOptimizer(self._config.learning_rate)
     train_op = slim.learning.create_train_op(self._loss, optimizer)
 
     # Use `slim.learning.train` to manage training.
