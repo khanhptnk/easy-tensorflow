@@ -45,7 +45,7 @@ To define a new model, we need to create 4 core files (see the `model_cifar10`
 directory):
 
 + **input_reader_cifar10.py**: reads examples from files containing tf.Example 
-protos (records) and make a batch of examples. 
+protos (records) and makes a batch of examples. 
 
 + **model_cifar10.py**: specifies the model architecture. It implements 
 `arg_scope` to configure model's layers (e.g. weight decay, regularize 
@@ -53,15 +53,15 @@ techniques, activation functions. etc.) and `compute` to arrange model's layers
 (e.g. which layers follow which layers) in order to return a batch of outputs 
 from a batch of inputs. 
 
-+ **train_cifar10.py**: runs training. We create a `Trainer` object, specifying 
++ **train_cifar10.py**: runs training. It creates a `Trainer` object, specifying 
 a training model object, loss function, computation graph, input reader object. 
-Then we invoke the `run` method to start training. 
+Then it invokes the `run` method of the `Trainer` obejct to start training. 
 
-+ **eval_cifar10.py**: runs evaluating. We create an `Evaluator` object, also 
++ **eval_cifar10.py**: runs evaluating. It creates an `Evaluator` object,  
 specifying an evaluating model object, loss function, computation graph, input 
-reader object. Then invoke the `run` method to start evaluating. **NOTE**: an 
-evaluating object is created by setting the `is_training` parameter of 
-`ModelBase` to False. 
+reader object. Similarly to training, it invokes the `run` method of the 
+`Evaluator` object to start evaluating. **NOTE**: an evaluating object is 
+created by setting the `is_training` parameter of `ModelBase` to False. 
 
 ##3. Common TensorFlow concepts:
 
