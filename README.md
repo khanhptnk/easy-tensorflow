@@ -87,6 +87,9 @@ reader object. Similarly to training, it invokes the `run` method of the
 `Evaluator` object to start evaluating. **NOTE**: an evaluating object is 
 created by setting the `is_training` parameter of `ModelBase` to False. 
 
+*Most modifications will go into `model_cifar10.py` and 
+`input_reader_cifar10.py`.*
+
 ##3. Common TensorFlow concepts:
 
 **tf.Example proto**: a feature vector and can be considered as a Python dict. Each 
