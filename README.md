@@ -44,24 +44,25 @@ $ tensorboard --logdir=/tmp/cifar10
 
 + **TrainEvalBase**: base (abstract) class for training and evaluating. 
 
-+ **Trainer**: a subclass of `TrainEvalBase` used for training a model with provided 
-data and loss function. 
++ **Trainer**: a subclass of `TrainEvalBase`, trains a model with provided data 
+and loss function. 
 
-+ **Evaluator**: a subclass of `TrainEvalBase` for evaluating a model, computes 
-evaluating metrics on a trained model.
++ **Evaluator**: a subclass of `TrainEvalBase`, computes evaluating metrics on a
+trained model.
 
 + **ModelBase**: base class for specifying a model architecture. Two methods are 
 required to implemented by any subclass: `arg_scope`, configurations of the 
 model's layers, and `compute`, computing outputs of the model from a batch of 
 input examples.
 
-+ **ModelCifar10**: a subclass of `ModelBase`, implements `arg_scope` and `compute`.
++ **ModelCifar10**: a subclass of `ModelBase`, implements `arg_scope` and 
+`compute`.
 
-+ **InputReaderBase**: base (abstract) class for reading input, requires the method
-`read_input` to be implemented by any subclass. 
++ **InputReaderBase**: base (abstract) class for reading input, requires the 
+method `read_input` to be implemented by any subclass. 
 
-+ **InputReaderCifar10**: a subclass of `InputReaderBase`, implements `read_input` and
-an input preprocessing method. 
++ **InputReaderCifar10**: a subclass of `InputReaderBase`, implements 
+`read_input` and an input preprocessing method. 
 
 ##2. Define a new model (Cifar-10 example):
 
