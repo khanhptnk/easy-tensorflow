@@ -18,7 +18,7 @@ $ cd cifar10
 Download Cifar-10 Python version:
 
 ~~~~
-$ wget https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz
+$ wget https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
 ~~~~
 
 Extract downloaded file:
@@ -39,7 +39,7 @@ Run training:
 $ python train_cifar10.py --logdir=/tmp/cifar10
 ~~~~
 
-Run evaluation:
+Run evaluation (can be run simultaneously with training):
 
 ~~~~
 $ python eval_cifar10.py --logdir=/tmp/cifar10
@@ -101,7 +101,7 @@ from a batch of inputs.
 
 + **train_cifar10.py**: runs training. It creates a `Trainer` object, specifying 
 a training model object, loss function, computation graph, input reader object. 
-Then it invokes the `run` method of the `Trainer` obejct to start training. 
+Then it invokes the `run` method of the `Trainer` object to start training. 
 
 + **eval_cifar10.py**: runs evaluating. It creates an `Evaluator` object, 
 specifying an evaluating model object, loss function, computation graph, input 
