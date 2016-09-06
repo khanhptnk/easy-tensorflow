@@ -113,9 +113,10 @@ reader object. Similarly to training, it invokes the `run` method of the
 created by setting the `is_training` parameter of `ModelBase` to False. 
 
 *Although there seem to be a lot of files, the amount of code in each file is 
-minimal. For most files, users simply have to copy them to a new directory. The 
-majority of modifications goes into `convert_to_tf_example_cifar10.py`, 
-`model_cifar10.py` and `input_reader_cifar10.py`.*
+minimal. For most files, users simply have to copy them to a new directory and 
+make tiny changes. The majority of modifications goes into 
+`convert_to_tf_example_cifar10.py`, `model_cifar10.py` and 
+`input_reader_cifar10.py`.*
 
 ##3. Common TensorFlow concepts:
 
