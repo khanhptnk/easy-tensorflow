@@ -1,8 +1,8 @@
 # easy-tensorflow
 
-**easy-tensorflow** provides an easy way to train and evaluate Tensorflow 
+**easy-tensorflow** provides an easy way to train and evaluate TensorFlow 
 models. The goal of this project is not build an off-the-shelf tool for 
-industrial or commercial purposes but to *simplify* programming with Tensorflow
+industrial or commercial purposes but to *simplify* programming with TensorFlow
 API. With a standardized pipeline, one does not have to worry about book-keeping
 functionalities but can focus entirely on input pre-processing and model 
 engineering. 
@@ -37,25 +37,25 @@ input examples.
 `read_input` to be implemented by any subclass. 
 
 + *InputReaderCifar10*: a subclass of `InputReaderBase`, implements `read_input` and
-an input pre-processing method. 
+an input preprocessing method. 
 
 ##2. Define a new model (Cifar-10 example):
 
 To define a new model, we need to create 4 core files (see the `model_cifar10` 
 directory):
 
-+ *input_reader_cifar10.py*: reads examples from files containing tf.Example protos
-(records) and make a batch of examples. 
++ *input_reader_cifar10.py*: reads examples from files containing tf.Example 
+protos (records) and make a batch of examples. 
 
 + *model_cifar10.py*: specifies the model architecture. It implements 
-`arg_scope` to configurate model's layers (e.g. weight decay, regularize 
+`arg_scope` to configure model's layers (e.g. weight decay, regularize 
 techniques, activation functions. etc.) and `compute` to arrange model's layers
 (e.g. which layers follow which layers) in order to return a batch of outputs 
 from a batch of inputs. 
 
 + *train_cifar10.py*: runs training. We create a `Trainer` object, specifying 
 a training model object, loss function, computation graph, input reader object. 
-Then we invole the `run` method to start training. 
+Then we invoke the `run` method to start training. 
 
 + *eval_cifar10.py*: runs evaluating. We create an `Evaluator` object, also 
 specifying an evaluating model object, loss function, computation graph, input 
@@ -71,7 +71,7 @@ either a list of type bytes (string), int64, or float. See:
  https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/example/example.proto
 for more details. 
 
-For example, if data are labeled, the proto have two features: one for the 
+For example, if data are labeled, then each proto has two features: one for the 
 observations (e.g. image) and one for the labels. 
 
 

@@ -54,7 +54,7 @@ class ModelCifar10(ModelBase):
     super(ModelCifar10, self).__init__(is_training)
 
   def arg_scope(self):
-    """Congurations of the neural network's layers."""
+    """Configure the neural network's layers."""
     batch_norm_params = {
       "is_training" : self.is_training,
       "decay" : 0.9997,

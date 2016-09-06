@@ -10,7 +10,7 @@ class ModelBase(object):
     self.is_training = is_training
 
   def arg_scope(self):
-    """Configurate model's layers.
+    """Configure model's layers.
 
       Raises:
         NotImplementedError: this method is required to be implemented by any
