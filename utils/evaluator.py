@@ -13,12 +13,12 @@ from train_eval_base import TrainEvalBase
 
 FLAGS = tf.flags.FLAGS
 
-tf.flags.DEFINE_string("data_path", "../data_cifar10/test_batch",
+tf.flags.DEFINE_string("data_path", "../cifar10/data/test_batch",
     "Path to files of tf.Example protos containing evaluating data.")
 
-tf.flags.DEFINE_string("logdir", "/tmp/cifar10/", "Directory where to write event logs")
+tf.flags.DEFINE_string("logdir", "/tmp/cifar10_run2", "Directory where to write event logs")
 
-tf.flags.DEFINE_string("eval_config", "batch_size=16,"
+tf.flags.DEFINE_string("eval_config", "batch_size=10,"
                                       "num_batches=100,"
                                       "eval_interval_secs=50,",
                         """

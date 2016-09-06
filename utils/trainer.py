@@ -13,7 +13,7 @@ from train_eval_base import TrainEvalBase
 
 FLAGS = tf.flags.FLAGS
 
-tf.flags.DEFINE_string("data_path", "../data_cifar10/data_batch_*",
+tf.flags.DEFINE_string("data_path", "../cifar10/data/data_batch_*",
     "Path to files of tf.Example protos containing training data.")
 
 tf.flags.DEFINE_string("logdir", "/tmp/cifar10_run2", "Directory where to write event logs")
