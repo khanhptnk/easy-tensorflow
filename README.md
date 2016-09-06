@@ -9,6 +9,30 @@ engineering.
 
 We make use of [TF-Slim](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/slim) to make the code concise and flexible.  
 
+##0. Demo
+
+~~~~
+$ cd model_cifar10
+~~~~
+
+Run training:
+
+~~~~
+$ python train_cifar10.py --logdir=/tmp/cifar10
+~~~~
+
+Run evaluation:
+
+~~~~
+$ python eval_cifar10.py --logdir=/tmp/cifar10
+~~~~
+
+Monitor stats on TensorBoard:
+
+~~~~
+$ tensorboard --logdir=/tmp/cifar10
+~~~~
+
 ##1. Code structure (Cifar-10 example)
 
           TrainEvalBase                 ModelBase             InputReaderBase
