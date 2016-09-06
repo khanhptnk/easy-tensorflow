@@ -37,7 +37,8 @@ class TrainEvalBase(object):
     keys, examples = self._input_reader.read_input(
         self._data_path,
         self._config.batch_size,
-        randomize_input=self._model.is_training)
+        randomize_input=self._model.is_training,
+        distort_inputs=self._model.is_training)
 
     self._observations = examples["decoded_observation"]
     self._labels = examples["decoded_label"]

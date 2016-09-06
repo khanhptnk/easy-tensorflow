@@ -96,6 +96,7 @@ class ModelCifar10(ModelBase):
                         hparams.nums_conv_filters[i],
                         [hparams.conv_filter_sizes[i], hparams.conv_filter_sizes[i]],
                         padding="SAME",
+                        biases_initializer=tf.constant_initializer(0.1 * i),
                         scope="conv_{0}".format(i))
       net = slim.max_pool2d(net,
                             [hparams.pooling_size, hparams.pooling_size],
@@ -103,7 +104,10 @@ class ModelCifar10(ModelBase):
                             scope="pool_{0}".format(i))
 
     net = slim.flatten(net, scope="flatten")
-    net = slim.fully_connected(net, 384, scope="fc_{0}".format(num_pool_conv_layers))
+    net = slim.fully_connected(net,
+                               384,
+                               biases_initializer=tf.constant_initializer(0.1),
+                               scope="fc_{0}".format(num_pool_conv_layers))
 
     net = slim.dropout(net,
                        hparams.dropout_prob,
@@ -111,11 +115,13 @@ class ModelCifar10(ModelBase):
 
     embedding = slim.fully_connected(net,
                                      192,
+                                     biases_initializer=tf.constant_initializer(0.1),
                                      scope="fc_{0}".format(num_pool_conv_layers + 1))
 
     net = slim.fully_connected(embedding,
                                InputReaderCifar10.NUM_CLASSES,
                                activation_fn=None,
+                               biases_initializer=tf.constant_initializer(0.0),
                                scope="fc_{0}".format(num_pool_conv_layers + 2))
 
     return net, embedding
