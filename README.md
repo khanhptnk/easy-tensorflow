@@ -90,6 +90,9 @@ method `read_input` to be implemented by any subclass.
 To define a new model, we need to create 4 core files (see the `cifar10` 
 directory):
 
++ **convert_to_tf_example_cifar10.py**: convert Cifar-10 data in Python version 
+to tf.Example protos. 
+
 + **input_reader_cifar10.py**: reads examples from files containing tf.Example 
 protos (records) and makes a batch of examples. 
 
@@ -109,8 +112,10 @@ reader object. Similarly to training, it invokes the `run` method of the
 `Evaluator` object to start evaluating. **NOTE**: an evaluating object is 
 created by setting the `is_training` parameter of `ModelBase` to False. 
 
-*Most modifications will go into `model_cifar10.py` and 
-`input_reader_cifar10.py`.*
+*Although there seem to be a lot of files, the amount of code in each file is 
+minimal. For most files, users simply have to copy them to a new directory. The 
+majority of modifications goes into `convert_to_tf_example_cifar10.py`, 
+`model_cifar10.py` and `input_reader_cifar10.py`.*
 
 ##3. Common TensorFlow concepts:
 
