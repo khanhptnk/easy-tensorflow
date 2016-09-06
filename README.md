@@ -57,7 +57,7 @@ from a batch of inputs.
 a training model object, loss function, computation graph, input reader object. 
 Then it invokes the `run` method of the `Trainer` obejct to start training. 
 
-+ **eval_cifar10.py**: runs evaluating. It creates an `Evaluator` object,  
++ **eval_cifar10.py**: runs evaluating. It creates an `Evaluator` object, 
 specifying an evaluating model object, loss function, computation graph, input 
 reader object. Similarly to training, it invokes the `run` method of the 
 `Evaluator` object to start evaluating. **NOTE**: an evaluating object is 
