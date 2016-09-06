@@ -1,4 +1,10 @@
-"""Convert raw Cifar10 data to tf.Example protos."""
+"""Convert raw Cifar10 data to tf.Example protos.
+
+  Assume that you have downloaded the CIFAR-10 python version from:
+    http://www.cs.toronto.edu/~kriz/cifar.html
+  and extracted it to `FLAGS.data_dir` directory.
+
+"""
 
 import tensorflow as tf
 
@@ -10,9 +16,9 @@ from tensorflow.python.platform import tf_logging as logging
 
 FLAGS = tf.flags.FLAGS
 
-tf.flags.DEFINE_string("data_dir", "cifar-10-batches-py", "Directory contains data")
+tf.flags.DEFINE_string("data_dir", "cifar-10-batches-py", "Directory contains data.")
 
-tf.flags.DEFINE_string("output_dir", "../tmp/", "Directory to store outputs")
+tf.flags.DEFINE_string("output_dir", "../tmp/", "Directory to store outputs.")
 
 NUM_FILE_BATCHES = 5
 
