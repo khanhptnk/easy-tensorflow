@@ -7,7 +7,7 @@ API. With a standardized pipeline, one does not have to worry about book-keeping
 functionalities but can focus entirely on input pre-processing and model 
 engineering. 
 
-We make use of TF-Slim to make the code concise and flexible.  
+We make use of [TF-Slim](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/slim) to make the code concise and flexible.  
 
 ##1. Code structure (for the Cifar-10 example)
 
