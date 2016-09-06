@@ -1,6 +1,6 @@
 """Convert raw Cifar10 data to tf.Example protos.
 
-  Assume that you have downloaded the CIFAR-10 python version from:
+  Assumed that you have downloaded the CIFAR-10 python version from:
     http://www.cs.toronto.edu/~kriz/cifar.html
   and extracted it to `FLAGS.data_dir` directory.
 """
