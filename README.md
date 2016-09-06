@@ -72,7 +72,7 @@ either a list of type bytes (string), int64, or float. See:
 for more details. 
 
 For example, if data are labeled, then each proto has two features: one for the 
-observations (e.g. image) and one for the labels. 
+observation (e.g. image) and one for the label. 
 
 
 
