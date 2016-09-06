@@ -12,7 +12,25 @@ We make use of [TF-Slim](https://github.com/tensorflow/tensorflow/tree/master/te
 ##0. Demo
 
 ~~~~
-$ cd model_cifar10
+$ cd cifar10
+~~~~
+
+Download Cifar-10 Python version:
+
+~~~~
+$ wget https://www.cs.toronto.edu/~kriz/cifar-100-python.tar.gz
+~~~~
+
+Extract downloaded file:
+
+~~~~
+$ tar -zxvf cifar-10-python.tar.gz
+~~~~
+
+Convert raw data to tf.Example protos:
+
+~~~~
+$ python convert_to_tf_example_cifar10.py --input_data_dir=cifar-10-batches-py --output_data_dir=data
 ~~~~
 
 Run training:
@@ -69,7 +87,7 @@ method `read_input` to be implemented by any subclass.
 
 ##2. Define a new model (Cifar-10 example):
 
-To define a new model, we need to create 4 core files (see the `model_cifar10` 
+To define a new model, we need to create 4 core files (see the `cifar10` 
 directory):
 
 + **input_reader_cifar10.py**: reads examples from files containing tf.Example 
