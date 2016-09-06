@@ -19,7 +19,7 @@ class ModelBase(object):
     raise NotImplementedError
 
   def compute(self):
-    """Compute output of the model from a batch of examples.
+    """Compute a batch of outputs of the model from a batch of inputs.
 
       Raises:
         NotImplementedError: this method is required to be implemented by any

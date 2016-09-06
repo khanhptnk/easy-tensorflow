@@ -78,7 +78,7 @@ class ModelCifar10(ModelBase):
       return sc
 
   def compute(self, inputs):
-    """Compute output of the neural network from a batch of examples.
+    """Compute a batch of outputs of the neural network from a batch of inputs.
       Args:
         inputs: a tensorflow tensor, a batch of input images. Each image is of
           size InputReaderCifar10.IMAGE_SIZE x InputReaderCifar10.IMAGE_SIZE x
