@@ -11,6 +11,13 @@ We make use of [TF-Slim](https://github.com/tensorflow/tensorflow/tree/master/te
 
 ##0. Cifar-10 demo
 
+Clone the repo to your computer:
+
+~~~~
+$ git clone git@github.com:khanhptnk/easy-tensorflow.git
+~~~~
+
+Go to the `cifar10` directory:
 ~~~~
 $ cd cifar10
 ~~~~
