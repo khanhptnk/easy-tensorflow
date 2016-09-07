@@ -87,7 +87,7 @@ method `read_input` to be implemented by any subclass.
 
 ##2. Define a new model (Cifar-10 example):
 
-To define a new model, we need to create 4 core files (see the `cifar10` 
+To define a new model, we need to create 5 core files (see the `cifar10` 
 directory):
 
 + **convert_to_tf_example_cifar10.py**: convert Cifar-10 data in Python version 

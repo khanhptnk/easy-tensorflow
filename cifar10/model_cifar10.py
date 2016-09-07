@@ -14,7 +14,7 @@ FLAGS = tf.flags.FLAGS
 
 tf.flags.DEFINE_string("model_hparams",
                        "nums_conv_filters=[64, 64],"
-                       "conv_filter_sizes=[5, 5],"
+                       "conv_filter_sizes=[3, 3],"
                        "pooling_size=2,"
                        "pooling_stride=2,"
                        "dropout_prob=0.5,"
