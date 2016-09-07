@@ -19,7 +19,7 @@ $ git clone git@github.com:khanhptnk/easy-tensorflow.git
 
 Go to the `cifar10` directory:
 ~~~~
-$ cd cifar10
+$ cd easy-tensorflow/cifar10
 ~~~~
 
 Download Cifar-10 Python version:
