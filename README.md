@@ -54,6 +54,8 @@ $ tensorboard --logdir=/tmp/cifar10
 Then go to any browser (e.g. Chrome)'s address bar and type "0.0.0.0:6006" to 
 visualize TensorBoard. 
 
+![](http://khanhxnguyen.com/wp-content/uploads/2016/09/Selection_105.png)
+
 ##1. Code structure (Cifar-10 example)
 
           TrainEvalBase                 ModelBase             InputReaderBase
