@@ -7,7 +7,7 @@ API. With a standardized pipeline, users do not have to worry about extra
 book-keeping steps but can focus entirely on input pre-processing and model 
 engineering. 
 
-We make use of [TF-Slim](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/slim) to make the code concise and flexible. We use tf.train.Example protocol buffers as the
+We make use of [TF-Slim](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/slim) to make the code concise and flexible. We use `tf.train.Example` protocol buffers as the
 standard input format. 
 
 ##0. Cifar-10 demo
